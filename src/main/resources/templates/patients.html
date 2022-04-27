@@ -25,7 +25,7 @@ layout:decorate="template1"
                   <table class="table">
                       <thead>
                       <tr>
-                          <th>ID</th><th>Nom</th><th>Date</th><th>Malade</th><th>Score</th>
+                          <th>ID</th><th>Nom</th><th>Date</th><th>Email</th><th>Malade</th><th>Score</th>
                       </tr>
                       </thead>
                       <tbody>
@@ -33,6 +33,7 @@ layout:decorate="template1"
                           <td th:text="${p.id}"></td>
                           <td th:text="${p.nom}"></td>
                           <td th:text="${p.dateNaissance}"></td>
+                          <td th:text="${p.email}"></td>
                           <td th:text="${p.malade}"></td>
                           <td th:text="${p.score}"></td>
 

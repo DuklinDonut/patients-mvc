@@ -18,6 +18,11 @@
                  <span class="text-danger" th:errors="${patient.nom}"></span>
              </div>
              <div>
+                 <label>Email</label>
+                 <input id="email" class="form-control" type="email" name="email" th:value="${patient.email}">
+                 <span class="text-danger" th:errors="${patient.email}"></span>
+             </div>
+             <div>
                  <label>Date Naissance</label>
                  <input class="form-control" type="date" name="dateNaissance" th:value="${patient.dateNaissance}">
                  <span class="text-danger" th:errors="${patient.dateNaissance}"></span>
