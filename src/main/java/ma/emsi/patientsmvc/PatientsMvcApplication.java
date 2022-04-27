@@ -7,6 +7,8 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.util.Date;
 
@@ -17,6 +19,10 @@ public class PatientsMvcApplication {
         SpringApplication.run(PatientsMvcApplication.class, args);
     }
 
+    @Bean
+    PasswordEncoder passwordEncoder(){
+        return new BCryptPasswordEncoder();
+    }
     //@Bean
     //Bean sert à executer la commande line suivante
     CommandLineRunner commandLineRunner(PatientRepository patientRepository){
@@ -40,12 +46,12 @@ public class PatientsMvcApplication {
     @Bean
     CommandLineRunner saveUsers(SecurityService securityService){
         return args -> {
-            securityService.saveNewUser("user1","lamia@g.com","1234","1234");
+          /* securityService.saveNewUser("user1","lamia@g.com","1234","1234");
             securityService.saveNewUser("user2","mohamed@g.com","1234","1234");
 
             securityService.saveNewRole("USER","");
             securityService.saveNewRole("ADMIN","");
-
+*/
             securityService.addRoleToUser("user1","ADMIN");
             securityService.addRoleToUser("user2","USER");
             //securityService.addRoleToUser("hassan","USER");

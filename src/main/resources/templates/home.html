@@ -14,14 +14,15 @@ layout:decorate="template1"
 
       <div class="container mt-2">
           <div class="card">
-              <div class="card-header">Liste des patients</div>
+<!--              <div class="card-header">Liste des patients</div>-->
               <div class="card-body">
-                  <form method="get" th:action="@{index}">
+                  <!--<form method="get" th:action="@{index}">
                       <label>Key word</label>
                       <input type="text" name="keyword" th:value="${keyword}">
                       <button type="submit" class="btn btn-primary">Chercher</button>
-                  </form>
-                  <table class="table">
+                  </form>-->
+                  <h3>رمضان كريم</h3>
+                  <!--<table class="table">
                       <thead>
                       <tr>
                           <th>ID</th><th>Nom</th><th>Date</th><th>Malade</th><th>Score</th>
@@ -35,19 +36,19 @@ layout:decorate="template1"
                           <td th:text="${p.malade}"></td>
                           <td th:text="${p.score}"></td>
 
-                          <td sec:authorize="hasRole('ADMIN')">
+                          <td sec:authorize="hasAuthority('ADMIN')">
                               <a class="btn btn-success" th:href="@{editPatient(id=${p.id}, keyword=${keyword}, page=${currentPage})}">
                                   Edit
                               </a>
                           </td>
-                          <td sec:authorize="hasRole('ADMIN')">
+                          <td sec:authorize="hasAuthority('ADMIN')">
                               <a onclick="return confirm('Etes-vous sûr?')" class="btn btn-danger" th:href="@{delete(id=${p.id}, keyword=${keyword}, page=${currentPage})}">
                                   Delete
                               </a>
                           </td>
                       </tr>
                       </tbody>
-                  </table>
+                  </table>-->
                   <ul class="nav nav-pills">
                       <li th:each="page,status:${pages}">
                           <a th:class="${status.index==currentPage?'btn btn-primary ms-1':'btn btn-outline-primary ms-1'}"
@@ -55,6 +56,10 @@ layout:decorate="template1"
                              th:href="@{index(page=${status.index}, keyword=${keyword})}"
                           ></a>
                       </li>
+                      <li class="nav-item">
+                          <a class="nav-link" th:href="@{/login}">Login</a>
+                      </li>
+
                   </ul>
               </div>
           </div>

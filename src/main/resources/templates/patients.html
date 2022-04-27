@@ -41,7 +41,7 @@ layout:decorate="template1"
                                   Edit
                               </a>
                           </td>
-                          <td sec:authorize="hasRole('ADMIN')">
+                          <td sec:authorize="hasAuthority('ADMIN')">
                               <a onclick="return confirm('Etes-vous sûr?')" class="btn btn-danger" th:href="@{/admin/delete(id=${p.id}, keyword=${keyword}, page=${currentPage})}">
                                   Delete
                               </a>
